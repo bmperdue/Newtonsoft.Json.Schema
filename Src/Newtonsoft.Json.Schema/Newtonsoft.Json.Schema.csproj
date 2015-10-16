@@ -134,6 +134,11 @@
     <EmbeddedResource Include="Resources\schema-draft-v4.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo DLL MOVED: $(TargetPath)
+if not exist "C:\TFS\TA\_QA\__Dependency\DLL\CustomRepo" mkdir C:\TFS\TA\_QA\__Dependency\DLL\CustomRepo
+xcopy /y /d  "$(TargetPath)" "C:\Users\bmperdue\Documents\GitHubVisualStudio\Newtonsoft.Json.Schema\Src\Newtonsoft.Json.Schema\bin\Release\Net45"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

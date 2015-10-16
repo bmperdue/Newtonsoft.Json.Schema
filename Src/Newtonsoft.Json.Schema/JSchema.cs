@@ -175,14 +175,13 @@ namespace Newtonsoft.Json.Schema
             }
         }
 
+        /* Schema Custom */
         /// <summary>
         /// Gets the required object properties.
         /// </summary>
         /// <value>The required object properties.</value>
-        public IList<string> Required
-        {
-            get
-            {
+        public IList<string> Required {
+            get {
                 if (_required == null)
                     _required = new List<string>();
 
@@ -275,6 +274,13 @@ namespace Newtonsoft.Json.Schema
                 return _enum;
             }
         }
+
+        /// <summary>
+        /// Gets or sets a collection of options.
+        /// </summary>
+        /// <value>A collection of options.</value>
+        public JObject Options { get; set; } /* Schema Custom */
+
 
         /// <summary>
         /// Gets or sets a flag indicating whether the array items must be unique.
